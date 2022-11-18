@@ -1,0 +1,919 @@
+/* ------------ VARIABLES ------------ */
+
+:root {
+  --transform: translateY(-100vh);
+  --transition: all 0.5s;
+  --transformIzquierda: translateX(0vh);
+  --transitionIzquierda: all 0.5s;
+}
+
+/* ------------ GENERALES ------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ------------ MODAL HACIA ABAJO ------------ */
+
+div.contenedorModal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s 0.9s;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+
+div.contenedorModal div.modal {
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  background-color: rgb(36, 36, 36);
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+
+div.modal div.cerrar {
+  align-self: flex-end;
+  color: white;
+}
+
+div.modal div.datosRegistro {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+div.datosRegistro h2 {
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 24px;
+  border-bottom: 3px solid blueviolet;
+  color: white;
+  padding-bottom: 10px;
+}
+
+div.modal div.datosOpciones {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-top: 2px solid white;
+}
+
+div.datosOpciones div.opciones {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  gap: 15px;
+  color: white;
+  margin-top: 10px;
+}
+
+div.modal div.datosFondos {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 0px 0px 0px;
+}
+
+div.datosFondos h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+div.datosFondos div.imagen {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+div.imagen img {
+  width: 100%;
+}
+
+/* ------------ MODAL HACIA LA IZQUIERDA ------------ */
+
+div.contenedorModalJuego {
+  width: 65%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s 0.9s;
+  transform: var(--transformIzquierda);
+  transition: var(--transitionIzquierda);
+  background-color: #111111bd;
+  z-index: 10;
+}
+
+div.contenedorModalJuego div.modalJuego {
+  margin: auto;
+  width: 90%;
+  height: auto;
+  background-color: rgb(36, 36, 36);
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transform: var(--transform);
+  transition: var(--transition);
+}
+
+div.modalJuego div.cerrar {
+  align-self: flex-end;
+  color: white;
+}
+
+div.modalJuego div.reglasJuego {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  border-top: 3px solid white;
+  padding-top: 20px;
+}
+
+div.reglasJuego h3 {
+  align-self: flex-start;
+  color: white;
+  margin-bottom: 20px;
+}
+
+div.reglasJuego div.datosReglas {
+  width: 100%;
+  text-align: justify;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  color: white;
+}
+
+/* ------------ ERROR ------------ */
+
+div.contenedorError {
+  width: 100%;
+  background-image: url("../images/fondos/error.jpg");
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.contenedorError div.datosError {
+  background-color: #111111bd;
+  margin: 0px auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+div.datosError a {
+  color: white;
+}
+
+/* ------------ LOGIN, REGISTRO ------------ */
+
+div.principal {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(35, 35, 49);
+}
+
+div.principal_formulario {
+  width: 50%;
+}
+
+div.principal_formulario div.principal_formulario_datos {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+div.principal_formulario_datos h2 {
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 24px;
+  border-bottom: 3px solid blueviolet;
+  color: white;
+  padding-bottom: 10px;
+}
+
+div.principal_formulario_datos form {
+  padding: 10px;
+  width: 95%;
+  text-align: center;
+}
+
+form label {
+  color: white;
+  font-weight: bolder;
+}
+
+form input {
+  border-radius: 4px;
+}
+
+form label,
+form input {
+  display: block;
+  margin: 15px auto;
+  width: 70%;
+  padding: 7px;
+  font-size: 15px;
+  text-align: center;
+}
+
+form input[type="submit"] {
+  margin-top: 30px;
+  cursor: pointer;
+  background-color: blueviolet;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 17px;
+}
+
+form div.contenedorCorreo,
+form div.contenedorPassword {
+  width: 100%;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: wheat;
+  font-weight: bolder;
+  text-align: center;
+}
+
+form div.contenedorCorreo_Registro,
+form div.contenedorPassword_Registro {
+  width: 100%;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: wheat;
+  font-weight: bolder;
+  text-align: center;
+}
+
+form div.registro {
+  margin-top: 20px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+form div.contenedorLogin,
+form div.contenedorRegistro {
+  width: 100%;
+}
+
+div.contenedorLogin span,
+div.contenedorRegistro span {
+  color: wheat;
+  font-weight: bolder;
+  text-align: center;
+  display: block;
+  margin-top: 5px;
+}
+
+div.registro span {
+  color: white;
+}
+
+div.registro button {
+  background-color: rgb(65, 21, 106);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 17px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+div.principal_logo {
+  width: 50%;
+}
+
+div.principal_logo img {
+  width: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+p.parrafoToken {
+  color: white;
+  font-size: 18px;
+}
+
+/* ------------ MAIN ------------ */
+
+div.contenedorMain {
+  width: 100%;
+  background-image: url("../images/fondos/main.jpg");
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.contenedorMain header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 10px;
+  background-color: rgb(65, 65, 65);
+}
+
+header h3 {
+  color: white;
+}
+
+header div.logout {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+div.logout span,
+div.logout a {
+  display: block;
+  font-weight: bolder;
+}
+
+div.logout span {
+  color: white;
+}
+
+div.logout a {
+  display: block;
+  color: white;
+  font-size: 18px;
+}
+
+div.contenedorMain p.parrafoPartida {
+  color: white;
+  font-size: 18px;
+  font-weight: bolder;
+  margin-left: 10px;
+}
+
+div.contenedorMain section.main {
+  width: 300px;
+  margin: 40px 0px 0px 20px;
+  min-height: 300px;
+}
+
+section.main div.contenedorJuego {
+  background-color: #111111cb;
+  padding: 10px;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  border-radius: 5px;
+  border: 3px solid rgb(0, 115, 255);
+}
+
+div.contenedorJuego form.formularioJuego {
+  width: 100%;
+}
+
+div.contenedorJuego form.formularioJuego input,
+div.contenedorJuego button {
+  display: block;
+  font-size: 18px;
+  background-color: rgb(0, 115, 255);
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 90%;
+  text-decoration: none;
+}
+
+div.contenedorJuego form.formularioJuego input {
+  background-color: rgb(35, 62, 95);
+}
+
+/* ------------ JUEGO ------------ */
+
+section.tablero_juego div.reglas {
+  background-color: rgb(0, 115, 255);
+  width: 60px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  padding: 8px;
+  position: fixed;
+  top: 50%;
+  right: 0%;
+}
+
+div.reglas span {
+  color: white;
+  cursor: pointer;
+}
+
+/* ------------ JUEGO - TABLERO ------------ */
+
+section.tablero_juego div.tablero {
+  width: 65%;
+  margin: 0px auto;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+/* ------------ TABLERO - HEADER_ENEMIGO/AMIGO ------------ */
+
+div.tablero div.tablero_header_enemigo,
+div.tablero div.tablero_header_amigo {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.tablero_header_enemigo div.tablero_header_enemigo_imagen,
+div.tablero_header_amigo div.tablero_header_amigo_imagen {
+  width: 70px;
+}
+
+div.tablero_header_enemigo_imagen img,
+div.tablero_header_amigo_imagen img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+div.tablero_header_enemigo div.tablero_header_enemigo_vida,
+div.tablero_header_amigo div.tablero_header_amigo_vida {
+  padding: 5px;
+  background-color: #111111bd;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+div.tablero_header_enemigo_vida div,
+div.tablero_header_amigo_vida div {
+  background-color: rgb(1, 248, 1);
+  width: 15px;
+  height: 30px;
+}
+
+div.tablero_header_enemigo div.tablero_header_enemigo_mana,
+div.tablero_header_amigo div.tablero_header_amigo_mana {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+div.tablero_header_enemigo_mana div,
+div.tablero_header_amigo_mana div {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+/* ------------ TABLERO - VIDA_ENEMIGO/AMIGO ------------ */
+
+div.tablero div.tablero_vida_enemigo,
+div.tablero div.tablero_vida_amigo {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+div.tablero div.tablero_vida_enemigo span,
+div.tablero div.tablero_vida_amigo span {
+  color: white;
+  font-weight: bolder;
+  background-color: #111111bd;
+  border: 2px solid lime;
+  padding: 5px;
+}
+
+/* ------------ TABLERO - CARTA_ENEMIGO/AMIGO ------------ */
+
+div.tablero div.tablero_carta_enemigo,
+div.tablero div.tablero_carta_amigo {
+  width: 100%;
+}
+
+div.tablero_carta_enemigo div.tablero_carta_enemigo_logo {
+  width: 240px;
+  margin: auto;
+  position: relative;
+}
+
+div.tablero_carta_amigo div.tablero_carta_amigo_logo {
+  width: 240px;
+  margin: auto;
+  position: relative;
+}
+
+div.tablero_carta_enemigo_logo_defensa span,
+div.tablero_carta_amigo_logo_defensa span,
+div.tablero_carta_enemigo_logo_ataque span,
+div.tablero_carta_amigo_logo_ataque span {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  display: block;
+  font-weight: bolder;
+  font-weight: bolder;
+}
+
+div.tablero_carta_enemigo_logo div.tablero_carta_enemigo_logo_ataque {
+  position: absolute;
+  bottom: 34.5%;
+  left: 8.5%;
+  width: 100px;
+}
+
+div.tablero_carta_amigo_logo div.tablero_carta_amigo_logo_ataque {
+  position: absolute;
+  bottom: 34.5%;
+  left: 8%;
+  width: 100px;
+}
+
+div.tablero_carta_enemigo_logo div.tablero_carta_enemigo_logo_defensa {
+  position: absolute;
+  bottom: 34.5%;
+  right: 1%;
+  width: 100px;
+}
+
+div.tablero_carta_amigo_logo div.tablero_carta_amigo_logo_defensa {
+  position: absolute;
+  bottom: 34.5%;
+  right: 1%;
+  width: 100px;
+}
+
+div.tablero_carta_enemigo_logo div.tablero_carta_enemigo_logo_nombre {
+  position: absolute;
+  bottom: 16%;
+  left: 38%;
+}
+
+div.tablero_carta_amigo_logo div.tablero_carta_amigo_logo_nombre {
+  position: absolute;
+  bottom: 16%;
+  left: 40%;
+}
+
+div.tablero_carta_enemigo_logo_nombre span,
+div.tablero_carta_amigo_logo_nombre span {
+  color: white;
+  text-align: center;
+  font-size: 17px;
+  display: block;
+  font-weight: bolder;
+  font-weight: bolder;
+}
+
+div.tablero_carta_enemigo_logo img,
+div.tablero_carta_amigo_logo img {
+  width: 100%;
+}
+
+div.tablero_carta_amigo_logo div.tablero_carta_amigo_logo_imagen_ataque {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 7%;
+  left: 11%;
+}
+
+div.tablero_carta_amigo_logo div.tablero_carta_amigo_logo_imagen_defensa {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  width: 50px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 7%;
+  right: 4%;
+}
+
+div.tablero_carta_amigo_logo_imagen_ataque img,
+div.tablero_carta_amigo_logo_imagen_defensa img {
+  width: 100%;
+}
+
+/* ------------ CLASES JS ------------ */
+
+div.contenedorCorreo.ocultar,
+div.contenedorPassword.ocultar,
+div.contenedorCorreo_Registro.ocultar,
+div.contenedorPassword_Registro.ocultar {
+  display: none;
+}
+
+div.contenedorModal.modal-open {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 0.1s;
+  --transform: translateY(0);
+  --transition: transform 0.5s 0.5s;
+  overflow: auto;
+}
+
+div.contenedorModalJuego.modal-open {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 0.1s;
+  --transform: translateX(0);
+  --transition: transform 0.5s 0.5s;
+  overflow: auto;
+}
+
+div.imagen img.imagen_activa {
+  border: 3px solid white;
+}
+
+div.tablero_carta_enemigo div.tablero_carta_enemigo_logo.ataque_enemigo {
+  animation-name: ataqueJugadorEnemigo;
+  animation-duration: 0.5s;
+}
+
+div.tablero_carta_amigo div.tablero_carta_amigo_logo.ataque_amigo {
+  animation-name: ataqueJugadorAmigo;
+  animation-duration: 0.5s;
+}
+
+div.tablero_carta_enemigo div.tablero_carta_enemigo_logo.defensa_enemigo {
+  animation-name: defensaJugadorEnemigo;
+  animation-duration: 0.5s;
+}
+
+div.tablero_carta_amigo div.tablero_carta_amigo_logo.defensa_amigo {
+  animation-name: defensaJugadorAmigo;
+  animation-duration: 0.5s;
+}
+
+div.tablero_header_amigo div.tablero_header_amigo_mana.bloquear_mana_amigo {
+  background: rgb(0, 115, 255);
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+div.tablero_header_enemigo
+  div.tablero_header_enemigo_mana.bloquear_mana_enemigo {
+  background: red;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ------------ KEYFRAMES ------------ */
+
+@keyframes ataqueJugadorAmigo {
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes ataqueJugadorEnemigo {
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes defensaJugadorAmigo {
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes defensaJugadorEnemigo {
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+/* ------------ MEDIAS ------------ */
+
+@media only screen and (max-width: 600px) {
+  div.tablero_header_enemigo div.tablero_header_enemigo_imagen,
+  div.tablero_header_amigo div.tablero_header_amigo_imagen {
+    width: 70px !important;
+  }
+
+  div.tablero_header_enemigo div.tablero_header_enemigo_mana,
+  div.tablero_header_amigo div.tablero_header_amigo_mana {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  div.tablero div.tablero_header_enemigo,
+  div.tablero div.tablero_header_amigo {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  div.tablero_header_enemigo div.tablero_header_enemigo_vida,
+  div.tablero_header_amigo div.tablero_header_amigo_vida {
+    width: 100%;
+  }
+
+  div.tablero_header_enemigo_vida div,
+  div.tablero_header_amigo_vida div {
+    width: 5%;
+    height: 25px;
+  }
+
+  div.principal_formulario_datos form {
+    width: 100%;
+  }
+  form div.contenedorCorreo,
+  form div.contenedorPassword,
+  form div.contenedorCorreo_Registro,
+  form div.contenedorPassword_Registro {
+    flex-flow: column wrap;
+  }
+
+  div.contenedorMain header {
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+
+  header h3 {
+    color: white;
+    margin: 20px 0px 0px 0px;
+    text-align: center;
+  }
+
+  header div.logout {
+    margin: 20px 0px 0px 0px;
+  }
+
+  div.contenedorMain section.main {
+    margin: 40px auto;
+  }
+
+  div.datosOpciones div.opciones {
+    font-size: 15px;
+  }
+
+  div.contenedorMain p.parrafoPartida {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  div.tablero_header_enemigo div.tablero_header_enemigo_imagen,
+  div.tablero_header_amigo div.tablero_header_amigo_imagen {
+    width: 53px;
+  }
+
+  div.tablero_header_enemigo div.tablero_header_enemigo_mana,
+  div.tablero_header_amigo div.tablero_header_amigo_mana {
+    width: 53px;
+    height: 53px;
+  }
+
+  div.contenedorModalJuego {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  section.tablero_juego div.tablero {
+    width: 100%;
+  }
+
+  div.principal {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  div.principal_formulario_datos h2 {
+    font-size: 20px;
+  }
+
+  form label,
+  form input {
+    width: 80%;
+  }
+
+  div.principal_formulario {
+    width: 100%;
+  }
+
+  div.principal_logo {
+    width: 100%;
+    padding: 10px;
+  }
+
+  div.principal_logo img {
+    width: 100%;
+    min-height: 50vh;
+    object-fit: cover;
+  }
+}
