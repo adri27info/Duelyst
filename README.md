@@ -36,7 +36,7 @@ The project has been created with:
 
 ## Issues
 
-The project has some issues:
+The project has some issues in localhost:
 
 - The email registration may fail, this is due to the PHPMailer library that I use in this project. This library can give errors depending on the configuration of your computer. Due to this, to register, I advise you to disable your antivirus or your firewall and try to register to be able to log in on the web.
 
