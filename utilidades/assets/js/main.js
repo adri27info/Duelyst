@@ -5,7 +5,7 @@ const botonesContenedorJuego = document.querySelectorAll(
 );
 const contenedorModal = document.getElementById("contenedorModal");
 const modal = document.getElementById("modal");
-let fechaExpiracionCookies = new Date("2023-12-25").toUTCString(),
+let fechaExpiracionCookies = new Date("2030-12-25").toUTCString(),
   cookies,
   cookieEncontradaMusica,
   cookieEncontradaReglas,
