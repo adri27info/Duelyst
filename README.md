@@ -59,5 +59,3 @@ To run this project, we need the following steps:
 - Once inside the phpmyadmin database manager, you have to click the import option. You must select the sql file, which is located in the recursos/conectividad/bbdd/sql folder of this project, which is the following: https://github.com/adri27info/Duelyst/blob/master/recursos/conectividad/bbdd/sql/duelyst.sql
 
 - Once the database is imported through the sql file, we go to the htdocs folder and create the apps/php/ folder and put the Duelyst project inside the php folder, so that everything works. Once this is done we put in the browser http://localhost/apps/php/Duelyst and we will see that the application will execute correctly.
-
-- Finally to access the page, we will have to register or use the default user that I have left in the database which is testing_game@gmail.com and its password is 12345

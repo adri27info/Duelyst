@@ -10,7 +10,7 @@ class UsuarioControlador
             header("Location:" . CHILD_ROOT_PATH . "usuario/main");
             exit();
         }
-        require_once("vistas/login.php");
+        require_once("recursos/vistas/login.php");
     }
 
     static function main()
@@ -47,7 +47,7 @@ class UsuarioControlador
                 }
             }
         }
-        require_once("vistas/main.php");
+        require_once("recursos/vistas/main.php");
     }
 
     static function juego()
@@ -87,17 +87,17 @@ class UsuarioControlador
             header("Location:" . CHILD_ROOT_PATH . "usuario/main/?partida_error=false");
             exit();
         }
-        require_once("vistas/juego.php");
+        require_once("recursos/vistas/juego.php");
     }
 
     static function errorAcceso()
     {
-        require_once("vistas/error_acceso.php");
+        require_once("recursos/vistas/error_acceso.php");
     }
 
     static function errorBusqueda()
     {
-        require_once("vistas/error_pagina.php");
+        require_once("recursos/vistas/error_pagina.php");
     }
 
     static function exitConnection()
